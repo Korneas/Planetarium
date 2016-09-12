@@ -15,7 +15,7 @@ public class Logica {
 	 * de String que leeran los nuevos planetas Y el contador para la
 	 * eliminacion de un grupo
 	 */
-	private int pantalla, numPlanetasIni, k, contador,people;
+	private int pantalla, numPlanetasIni, k, contador, people;
 
 	// PImage para el fondo y la interfaz general de la app
 	private PImage fondo, logo, space, esquema;
@@ -156,8 +156,10 @@ public class Logica {
 		// Si el contador es 3 entonces se elimina el grupo y vuelve a su estado
 		// original
 		if (contador >= 3) {
-			eliminarGrupo();
-			contador = 0;
+			if (gr != null) {
+				eliminarGrupo();
+				contador = 0;
+			}
 		}
 
 		// Si se presiona el mouse el contador ira sumando cada segundo
